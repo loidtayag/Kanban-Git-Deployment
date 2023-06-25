@@ -4,7 +4,13 @@ import styled from "styled-components";
 import { getStatuses } from "../../../utils/helpers";
 import { iData } from "./TaskAdd";
 
-function ExitOverlay({ setOverlay, setData }: { setOverlay: (value: boolean) => void, setData: (value: iData) => void }) {
+function ExitOverlay({
+  setOverlay,
+  setData,
+}: {
+  setOverlay: (value: boolean) => void;
+  setData: (value: iData) => void;
+}) {
   return (
     <Button
       type="button"
@@ -14,15 +20,13 @@ function ExitOverlay({ setOverlay, setData }: { setOverlay: (value: boolean) => 
           title: "",
           desc: "",
           subtasks: [],
-          status: getStatuses()[0]
+          status: getStatuses()[0],
         });
       }}
     >
-      <Img
-        src="/exit.svg"
-        alt="Exit overlay"
-      />
-    </Button>);
+      <Img src="/exit.SVG" alt="Exit overlay" />
+    </Button>
+  );
 }
 
 export const Button = styled.button`

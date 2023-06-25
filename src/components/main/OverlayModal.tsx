@@ -4,9 +4,9 @@ import styled from "styled-components";
 import { ThemeContext } from "../../utils/context";
 
 function OverlayModal({
-                        onSubmit,
-                        children
-                      }: {
+  onSubmit,
+  children,
+}: {
   setOverlay: (value: boolean) => void;
   onSubmit: () => void;
   children: ReactNode;
@@ -17,7 +17,7 @@ function OverlayModal({
 const FormModal = styled.form.attrs(
   ({ onSubmit }: { onSubmit: () => void }) => ({
     onSubmit: onSubmit,
-    id: "dfs"
+    id: "dfs",
   })
 )`
   display: flex;
@@ -41,8 +41,8 @@ const FormModal = styled.form.attrs(
 `;
 
 export function ExitModal({
-                            setOverlay
-                          }: {
+  setOverlay,
+}: {
   setOverlay: (value: boolean) => void;
 }) {
   return (
@@ -52,7 +52,7 @@ export function ExitModal({
         setOverlay(false);
       }}
     >
-      <Img src="/exit.svg" alt="Exit overlay" />
+      <Img src="/exit.SVG" alt="Exit overlay" />
     </Button>
   );
 }
@@ -60,7 +60,7 @@ export function ExitModal({
 export function ExitModalSubmit() {
   return (
     <Button type="submit">
-      <Img src="/exit.svg" alt="Exit overlay" />
+      <Img src="/exit.SVG" alt="Exit overlay" />
     </Button>
   );
 }
@@ -89,20 +89,24 @@ export const LabelModal = styled.label`
 export const InputModal = styled.input<{
   type: string;
 }>`
-  height: ${({ type }: { type: string }) => (type === "submit" ? "3.5rem" : "2.7rem")};
+  height: ${({ type }: { type: string }) =>
+    type === "submit" ? "3.5rem" : "2.7rem"};
   background-color: ${({ type }: { type: string }) =>
-          type === "submit" ? theme.clickable : "inherit"};
+    type === "submit" ? theme.clickable : "inherit"};
   border: ${({ type }: { type: string }) =>
-          type === "submit" ? "none" : "0.1rem solid " + theme.textColor};
+    type === "submit" ? "none" : "0.1rem solid " + theme.textColor};
   border-radius: 0.7rem;
-  cursor: ${({ type }: { type: string }) => (type === "submit" ? "pointer" : "")};
-  margin-bottom: ${({ type }: { type: string }) => (type === "submit" ? "" : "2ch")};
+  cursor: ${({ type }: { type: string }) =>
+    type === "submit" ? "pointer" : ""};
+  margin-bottom: ${({ type }: { type: string }) =>
+    type === "submit" ? "" : "2ch"};
   ${textTheme};
   color: ${({ type }: { type: string }) =>
-          type === "submit"
-                  ? () => useContext(ThemeContext)?.headers
-                  : theme.iconColor};
-  padding: ${({ type }: { type: string }) => (type === "submit" ? "" : "0 0.5ch 0 0.5ch")};
+    type === "submit"
+      ? () => useContext(ThemeContext)?.headers
+      : theme.iconColor};
+  padding: ${({ type }: { type: string }) =>
+    type === "submit" ? "" : "0 0.5ch 0 0.5ch"};
   min-width: 100%;
 `;
 

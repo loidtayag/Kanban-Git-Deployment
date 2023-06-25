@@ -4,36 +4,44 @@ import React, { createRef, useContext, useEffect } from "react";
 import { iData } from "./TaskAdd";
 import { ThemeContext } from "../../../utils/context";
 
-function SubtaskInput({ data, setData }: { data: iData, setData: (value: iData) => void }) {
+function SubtaskInput({
+  data,
+  setData,
+}: {
+  data: iData;
+  setData: (value: iData) => void;
+}) {
   let i = 0;
   console.log(data);
-  return <div style={{ marginBottom: "2ch" }}>
-    <h3 style={{ marginBottom: "0.3rem" }}>Subtasks</h3>
-    {data.subtasks.map((subtask) => (
-      <Input
-        info={data}
-        setInfo={setData}
-        subtask={subtask}
-        myKey={i++}
-        key={i}
-      />
-    ))}
-    <AddSubtask
-      onClick={() => {
-        let demo: iData = {
-          title: data.title,
-          desc: data.desc,
-          subtasks: data.subtasks,
-          status: data.status
-        };
-        demo.subtasks.push("");
-        setData(demo);
-      }}
-      type="button"
-    >
-      + Add New Subtask
-    </AddSubtask>
-  </div>;
+  return (
+    <div style={{ marginBottom: "2ch" }}>
+      <h3 style={{ marginBottom: "0.3rem" }}>Subtasks</h3>
+      {data.subtasks.map((subtask) => (
+        <Input
+          info={data}
+          setInfo={setData}
+          subtask={subtask}
+          myKey={i++}
+          key={i}
+        />
+      ))}
+      <AddSubtask
+        onClick={() => {
+          let demo: iData = {
+            title: data.title,
+            desc: data.desc,
+            subtasks: data.subtasks,
+            status: data.status,
+          };
+          demo.subtasks.push("");
+          setData(demo);
+        }}
+        type="button"
+      >
+        + Add New Subtask
+      </AddSubtask>
+    </div>
+  );
 }
 
 const AddSubtask = styled.button`
@@ -64,7 +72,7 @@ const Input = (props: {
     "▒▒▒▒▒▒▒█░▒▓▒▒▒▒▓▒▒▒█░░░░░░░▀░░░░░█",
     "▒▒▒▒▒▄▄█░▒▒▒▓▒▒▒▒▒▒▒█░░█▄▄█▄▄█░░█",
     "▒▒▒▒█░░░█▄▄▄▄▄▄▄▄▄▄█░█▄▄▄▄▄▄▄▄▄█",
-    "▒▒▒▒█▄▄█░░█▄▄█░░░░░░█▄▄█░░█▄▄█"
+    "▒▒▒▒█▄▄█░░█▄▄█░░░░░░█▄▄█░░█▄▄█",
   ];
 
   let ref: React.RefObject<HTMLInputElement> = createRef();
@@ -79,7 +87,7 @@ const Input = (props: {
         display: "flex",
         flexDirection: "row",
         width: "100%",
-        marginBottom: "0.3rem"
+        marginBottom: "0.3rem",
       }}
     >
       <input
@@ -103,7 +111,7 @@ const Input = (props: {
           backgroundColor: useContext(ThemeContext)?.form,
           marginRight: "1ch",
           boxSizing: "border-box",
-          padding: "0 0.5ch 0 0.5ch"
+          padding: "0 0.5ch 0 0.5ch",
         }}
       />
       <button
@@ -112,7 +120,7 @@ const Input = (props: {
             title: props.info.title,
             desc: props.info.desc,
             subtasks: props.info.subtasks,
-            status: props.info.status
+            status: props.info.status,
           };
           console.log(demo);
           demo.subtasks.splice(props.myKey, 1);
@@ -122,17 +130,17 @@ const Input = (props: {
         style={{
           backgroundColor: "inherit",
           border: "none",
-          display: "inline"
+          display: "inline",
         }}
         type="button"
       >
         <img
-          src="/delete-subtask.svg"
+          src="/delete-subtask.SVG"
           alt="Delete subtask"
           style={{
             width: theme.iconSize,
             filter: theme.iconColor,
-            cursor: "pointer"
+            cursor: "pointer",
           }}
         />
       </button>

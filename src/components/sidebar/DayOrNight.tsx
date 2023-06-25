@@ -3,7 +3,11 @@ import styled, { css } from "styled-components";
 import { theme } from "../../styles/theme.styles";
 import { ThemeContext } from "../../utils/context";
 
-export default function DayOrNight({ toggleTheme }: { toggleTheme: () => void; }) {
+export default function DayOrNight({
+  toggleTheme,
+}: {
+  toggleTheme: () => void;
+}) {
   return (
     <Flex>
       <Moon />
@@ -38,7 +42,7 @@ const Flex = styled.div`
 
 const Sun = styled.img.attrs(() => ({
   alt: "Light mode",
-  src: "/sun.svg"
+  src: "/sun.SVG",
 }))`
   width: 3.7rem;
   filter: ${theme.iconColor};
@@ -71,7 +75,7 @@ const Inner = styled.div`
 `;
 
 const Input = styled.input.attrs(() => ({
-  defaultChecked: useContext(ThemeContext)?.headers === "#000000"
+  defaultChecked: useContext(ThemeContext)?.headers === "#000000",
 }))`
   position: absolute;
   width: 4rem;
@@ -83,26 +87,26 @@ const Input = styled.input.attrs(() => ({
 
   &:checked ~ ${Inner} {
     ${() =>
-            useContext(ThemeContext)?.foreground === "#000000"
-                    ? css`
-                      transform: translate(-2.1rem, 0);
-                      transition: transform .8s;
-                    `
-                    : css`
-                      transform: translate(2.1rem, 0);
-                      transition: transform .8s;
-                    `}
+      useContext(ThemeContext)?.foreground === "#000000"
+        ? css`
+            transform: translate(-2.1rem, 0);
+            transition: transform 0.8s;
+          `
+        : css`
+            transform: translate(2.1rem, 0);
+            transition: transform 0.8s;
+          `}
   }
 
   &:not(:checked) ~ ${Inner} {
     transform: translate(0, 0);
-    transition: transform .8s;
+    transition: transform 0.8s;
   }
 `;
 
 const Moon = styled.img.attrs(() => ({
   alt: "Dark mode",
-  src: "/moon.svg"
+  src: "/moon.SVG",
 }))`
   width: 4rem;
   filter: ${theme.iconColor};

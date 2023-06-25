@@ -3,10 +3,9 @@ import styled from "styled-components";
 import { theme } from "../../styles/theme.styles";
 
 export default function HiddenSidebar({ onClick }: { onClick: () => void }) {
-
   return (
     <Visual onClick={onClick}>
-      <Embed alt="Reveal sidebar" src="/show.svg" />
+      <Embed alt="Reveal sidebar" src="/show.SVG" />
     </Visual>
   );
 }

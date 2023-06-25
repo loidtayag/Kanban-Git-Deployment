@@ -1,11 +1,21 @@
-import React, {ReactNode, useContext, useEffect, useState} from "react";
+import React, { ReactNode, useContext, useEffect, useState } from "react";
 import styled from "styled-components";
-import {iBoard} from "../../utils/interfaces";
-import {defaultBoard, getBoards, getSelectedBoard, getSelectedBoardIndex, initBoards,} from "../../utils/helpers";
+import { iBoard } from "../../utils/interfaces";
+import {
+  defaultBoard,
+  getBoards,
+  getSelectedBoard,
+  getSelectedBoardIndex,
+  initBoards,
+} from "../../utils/helpers";
 import { textTheme, theme } from "../../styles/theme.styles";
 import { ThemeContext } from "../../utils/context";
 
-const BoardTitles = (props: { boardNames: string[], setBoardNames: (value: string[]) => void, setSelectedBoard: (value: iBoard) => void }) => {
+const BoardTitles = (props: {
+  boardNames: string[];
+  setBoardNames: (value: string[]) => void;
+  setSelectedBoard: (value: iBoard) => void;
+}) => {
   const [isOverlay, setIsOverlay] = useState(false);
   const [deleteOverlay, setDeleteOverlay] = useState<any[]>([
     false,
@@ -95,7 +105,7 @@ const DeleteOverlay = styled(
         }}
       >
         <img
-          src="/exit.svg"
+          src="/exit.SVG"
           alt="Exit overlay"
           style={{
             cursor: "pointer",
@@ -202,7 +212,7 @@ const BoardTotal = (boardTotal: number) => (
 
 const P = styled.p`
   ${textTheme}
-`
+`;
 
 const BoardIndividual = (
   setSelectedBoard: (value: iBoard) => void,
@@ -260,7 +270,7 @@ const BoardIndividual = (
           >
             <img
               alt="Table chart"
-              src="/select.svg"
+              src="/select.SVG"
               style={{
                 /* https://codepen.io/sosuke/pen/Pjoqqp */
                 filter:
@@ -325,7 +335,7 @@ const BoardIndividual = (
             }}
           >
             <img
-              src="/delete-subtask.svg"
+              src="/delete-subtask.SVG"
               alt="Delete subtask"
               style={{
                 width: theme.iconSize,
@@ -341,7 +351,7 @@ const BoardIndividual = (
 };
 
 const Highlight = styled.div<{ boardName: string }>`
-  background-color: ${(props : { boardName: string }) => {
+  background-color: ${(props: { boardName: string }) => {
     return getSelectedBoard().name === props.boardName
       ? theme.clickable
       : "inherit";
@@ -376,7 +386,7 @@ const BoardCreate = (key: number, setIsOverlay: (value: boolean) => void) => (
   >
     <img
       alt="Table chart"
-      src="/select.svg"
+      src="/select.SVG"
       style={{
         //https://codepen.io/sosuke/pen/Pjoqqp
         filter:
@@ -425,7 +435,7 @@ const Overlay = styled(
         }}
       >
         <img
-          src="/exit.svg"
+          src="/exit.SVG"
           alt="Exit overlay"
           style={{
             cursor: "pointer",

@@ -3,8 +3,8 @@ import React, { ReactNode } from "react";
 import { textTheme, theme } from "../../styles/theme.styles";
 
 export default function ToggleSidebar({
-                                        setShowSidebar
-                                      }: {
+  setShowSidebar,
+}: {
   setShowSidebar: () => void;
 }) {
   return (
@@ -24,13 +24,10 @@ const Flex = styled.div`
 `;
 
 const Visual = styled.button.attrs(
-  ({
-     onClick,
-     children
-   }: {
-    onClick: () => void;
-    children: ReactNode;
-  }) => ({ onClick: onClick, children: children })
+  ({ onClick, children }: { onClick: () => void; children: ReactNode }) => ({
+    onClick: onClick,
+    children: children,
+  })
 )<{
   onClick: () => void;
   children: ReactNode;
@@ -46,7 +43,7 @@ const Visual = styled.button.attrs(
 
 const Embed = styled.img.attrs(() => ({
   alt: "Hide sidebar",
-  src: "/hide.svg"
+  src: "/hide.SVG",
 }))`
   filter: ${theme.iconColor};
 `;
