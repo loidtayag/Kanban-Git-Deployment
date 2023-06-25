@@ -1,10 +1,10 @@
 {
   "files": {
-    "main.js": "/Kanban-frontend/static/js/main.56baec85.js",
-    "index.html": "/Kanban-frontend/index.html",
-    "main.56baec85.js.map": "/Kanban-frontend/static/js/main.56baec85.js.map"
+    "main.js": "/Kanban-Git-Deployment/static/js/main.9e4ee9e1.js",
+    "index.html": "/Kanban-Git-Deployment/index.html",
+    "main.9e4ee9e1.js.map": "/Kanban-Git-Deployment/static/js/main.9e4ee9e1.js.map"
   },
   "entrypoints": [
-    "static/js/main.56baec85.js"
+    "static/js/main.9e4ee9e1.js"
   ]
 }
